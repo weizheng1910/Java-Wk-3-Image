@@ -1,0 +1,55 @@
+var base = new SimpleImage("smallhands.png")
+print(base)
+
+
+//Question 1
+
+function stripes(x) {
+    
+var img = new SimpleImage(x)
+
+for (var pixel of img.values()) {
+
+    if ((0 < pixel.getX())&&(pixel.getX()<(img.getWidth()*1/3)) )
+    {pixel.setRed(255)}
+
+    else if (((img.getWidth()*1/3)<pixel.getX())&&(pixel.getX()<(img.getWidth()*2/3)))
+    {pixel.setBlue(255)}
+    
+    else {pixel.setGreen(225)}
+}
+print(img)
+}
+
+// Question 2
+
+function swapRedGreen(x) {
+    
+    var img = new SimpleImage(x)
+    
+    for (var pixel of img.values()) {
+        
+    var oldR = pixel.getRed()
+    var oldG = pixel.getGreen()
+    
+    pixel.setGreen(oldR)
+    pixel.setRed(oldG)  
+} 
+print(img)
+}
+
+// Question 3
+
+function dukeswap(x) {
+    
+    var img = new SimpleImage(x)
+    for (var pixel of img.values()) {
+        if ((pixel.getRed()==0) && (pixel.getGreen()==51) && (pixel.getBlue()==227))
+        
+        {   pixel.setRed(255)
+            pixel.setGreen(255)
+            pixel.setBlue(0)
+        }
+    }
+     print(img)
+}
