@@ -1,0 +1,1 @@
+// Make sure the name of the function you defined is not a predefined HTML function. For example, I tried to name a function "clear()", but the function wouldn't work because it is already predefined.
