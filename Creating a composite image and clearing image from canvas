@@ -1,0 +1,94 @@
+
+
+//Learnt to declare variables as a global variable when they are used by multiple functions. 
+//Learnt higher order functions. In this case, the higher-order function clearCanvas(), used the base function doClear() to clear both the foreground and background image. 
+
+
+//HTML
+
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" ></script>
+
+<h1> Green Screen Web Page </h1>
+
+<canvas id="foregd"></canvas>
+<canvas id="backgd"></canvas>
+
+<p>
+  Foreground: 
+  <input type="file" multiple:"false" access:"image/*" id="finput" onchange= Fupload()>
+</p>
+<p>
+  Background: 
+  <input type="file" multiple:"false" access:"image/*" id="binput" onchange=Bupload() >
+</p>
+<p>
+<input type="button" value="Convert"  id="convt" onclick=change() >
+</p>
+<p>
+<input type="button" value="Clear"  id="clr" onclick="clearCanvas()">
+</p>
+
+//CSS
+
+h1 {
+  font-family: helvetica;
+}
+
+canvas {
+  height: 200px;
+  outline: solid black 2px;
+  margin: 0 2px 0 2px;
+}
+
+#convt {
+  width: 75px;
+}
+
+
+
+//Javascript
+
+var fImage = null;
+var bImage = null;
+
+var fgcanvas = document.getElementById("foregd");
+var bgcanvas = document.getElementById("backgd");
+
+function Fupload() {
+  var fileinput = document.getElementById("finput");
+  fImage = new SimpleImage(fileinput);
+  fImage.drawTo(fgcanvas);
+}
+
+function Bupload() {
+  var fileinput = document.getElementById("binput");
+  bImage = new SimpleImage(fileinput);
+  bImage.drawTo(bgcanvas);
+}
+
+function change() {
+  for(var px of fImage.values()) {
+   var x = px.getX()
+   var y = px.getY()
+    
+    if ((px.getRed()==0) && (px.getBlue()==0)  && (px.getGreen()==255))
+     
+     {
+       px.setAllFrom(bImage.getPixel(x,y))
+     }
+  }
+
+  fImage.drawTo(fgcanvas);
+  var context2 = bgcanvas.getContext("2d");
+  context2.clearRect(0,0,bgcanvas.width,bgcanvas.height);
+}
+
+function clearCanvas() {
+  doClear(fgcanvas);
+  doClear(bgcanvas);
+}
+
+function doClear(canvas) {
+  var context = canvas.getContext("2d");
+  context.clearRect(0,0,canvas.width,canvas.height);
+}

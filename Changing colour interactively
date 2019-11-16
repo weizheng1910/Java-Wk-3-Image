@@ -1,0 +1,49 @@
+//Changing colour interactively
+
+//HTML
+
+<h1> Changing colour practice</h1>
+
+<div id="div1" class="blue">Hello</div>
+<div id="div2" class="red">Bye</div>
+<br>
+<div id="cc" class="button">Change colour!</div>
+
+//CSS
+
+div {
+  height: 20px;
+  width: 150px;
+  border: solid;
+}
+
+.blue {
+  background: lightblue;
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: lightgreen;
+}
+
+.yellow {
+  background: yellow;
+}
+
+//Javascript
+
+document.getElementById("cc").onclick = change
+
+function change () {
+  var d1 = document.getElementById("div1");
+  var d2 = document.getElementById("div2");
+  
+  d1.className = "green";
+  d2.className = "yellow";
+  
+}
+
+//*** To change the Text, use the .innerHTML Property///
