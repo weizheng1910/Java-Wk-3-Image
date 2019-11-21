@@ -1,0 +1,44 @@
+function doClear() {
+  var cxt = canvas.getContext("2d"); 
+  cxt.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function makeGray() { 
+   for(var px of image.values()) {
+   var avg = (px.getRed() + px.getBlue() + px.getGreen())/3;
+   px.setRed(avg);
+   px.setBlue(avg);
+   px.setGreen(avg);
+ }
+  image.drawTo(canvas)
+}
+
+function makeRed() {
+   for(var px of image.values()) {
+   var avg = (px.getRed() + px.getBlue() + px.getGreen())/3;
+   if (avg<128) {px.setRed(2*avg);px.setGreen(0);px.setBlue(0)}
+   else {px.setRed(255);px.setGreen((2*avg)-255);px.setBlue((2*avg)-255)}
+   }
+  image.drawTo(canvas);
+}
+
+function reSet() {
+  image = new SimpleImage(file);
+  image.drawTo(canvas);
+}
+
+function makeBorder() {
+    
+  for(var px of image.values())
+    var x = px.getX();
+    var y = px.getY();
+    var w = image.getWidth();
+    var h = image.getHeight();
+    if (x<10 || x>(w-10)) || (y<10 || y>(h-10)) 
+      {px.setRed(0);
+       px.setBlue(0);
+       px.setRed(0);
+       px.setAlpha(255);
+      }
+  image.drawTo(canvas)
+}
