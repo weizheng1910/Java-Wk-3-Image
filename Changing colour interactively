@@ -1,4 +1,9 @@
-//Changing colour interactively
+/*
+Changing colour interactively
+CodePen.io is used for the below project
+This exercise creates two elements, and a button which allows the element to change colour.
+A simple exercise.
+*/
 
 //HTML
 
