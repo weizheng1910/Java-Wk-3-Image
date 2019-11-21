@@ -1,8 +1,18 @@
+/*
+NOTE: Code could be run on Codepen.io
 
+The below script creates a composite of two images - 
+It takes an image with a desired foreground (background rendered green) and merges it with the desired background.
 
-//Learnt to declare variables as a global variable when they are used by multiple functions. 
-//Learnt higher order functions. In this case, the higher-order function clearCanvas(), used the base function doClear() to clear both the foreground and background image. 
+To see a specific example in action, take the below images from https://www.dukelearntoprogram.com/course1/example/index.php:
+Foreground: drewRobert.png
+Background: dinos.png
 
+Lesson Learnt:
+1. Declare variables as a global variable when they are used by multiple functions. 
+2. Higher order functions. In this case, the higher-order function clearCanvas(), used the base function doClear() to clear both the foreground and background image. 
+
+*/
 
 //HTML
 
