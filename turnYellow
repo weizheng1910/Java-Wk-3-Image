@@ -1,0 +1,22 @@
+//Function turns a simpleImage yellow.
+
+function turnyellow(x) {
+    
+var img = new SimpleImage(x)
+
+for (var pixel of img.values()) {
+
+    var newG = 255 - pixel.getGreen();
+    pixel.setGreen(newG);
+    var newR = 255 - pixel.getRed();
+    pixel.setRed(newR);
+    var newB = 0;
+    pixel.setBlue(newB);
+    var newA = 255;
+    pixel.setAlpha(newA);
+    
+}
+print(img)
+}
+
+turnyellow("chapel.png")
