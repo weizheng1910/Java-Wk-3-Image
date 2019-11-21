@@ -1,8 +1,11 @@
-var base = new SimpleImage("smallhands.png")
-print(base)
 
+/* 
+"https://www.dukelearntoprogram.com/course1/example/index.php" is the enviroment which allows immediate feedback on Javascript and provides sample images which was used for this assignment.
+SimpleImage allows the user to access the pixels of an image file, (i.e. .png .jpg).
+*/
 
 //Question 1
+//Dividing the image into 3 columns, the below function then turns the first column reddish, second column bluish and third column greenish.
 
 function stripes(x) {
     
@@ -22,6 +25,7 @@ print(img)
 }
 
 // Question 2
+// This function swap the green values and the red values of each individual pixels.
 
 function swapRedGreen(x) {
     
@@ -39,6 +43,8 @@ print(img)
 }
 
 // Question 3
+//This function only works on "duke_blue_devil.png"
+//It turns the duke devil yellow.
 
 function dukeswap(x) {
     
