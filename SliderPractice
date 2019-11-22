@@ -1,0 +1,79 @@
+/* 
+The program allos the user to:
+
+1. Use the slider to adjust height of square in canvas
+2. Use the color picker to change background color of canvas 
+
+Key-learning points:
+
+1. 'onchange' and 'oninput' event listeners.
+
+  <input type="range" min="10" max="100" value="10" id="slr" oninput=doSquare()>
+  <input type="color" value="#FF0000" id="clr" onchange="doColor()" >
+
+2. canvas.getContext("2d")
+    -the parameter defines the drawing context associated with the canvas.
+    -2d represents 2d Image, webgl is 3d.
+    -it allows function like .clearRect, .fillStyle, .fillRect
+    
+*/ 
+
+//HTML
+<h1>Slider practice</h1>
+
+<canvas id="can" class="orangeback">
+</canvas>
+
+<p>
+<input type="color" value="#FF0000" id="clr" onchange="doColor()" >
+<input type="range" min="10" max="100" value="10" id="slr" oninput=doSquare()>
+</p>
+//CSS
+
+h1 {
+  font-family: arial;
+  color: dimgray;
+}
+
+body {
+  margin: 20px;
+}
+
+canvas {
+  width: 300pt;
+  //height: 200pt;
+  margin: 10px;
+  border: 1px solid lightgray;
+}
+
+input {
+  font-size: 20pt;
+}
+
+.orangeback {
+  background-color: orange;
+}
+  
+  //Javascript
+  
+function doColor() {
+  var canvas = document.getElementById("can");
+  var colorinput = document.getElementById("clr");
+  canvas.style.backgroundColor = colorinput.value;
+}
+
+function doSquare() {
+  var sliderinput = document.getElementById("slr");
+  var len = sliderinput.value;
+  var canvas = document.getElementById("can");
+  var context = canvas.getContext("2d");
+  context.clearRect(0,0,canvas.width,canvas.height);
+  context.fillStyle = "yellow";
+  context.fillRect(10,10,len,len);
+  context.fillRect(parseInt(len)+20,10,len,len);
+  context.fillRect(len*3,10,len,len);
+}
+
+
+
+
