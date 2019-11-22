@@ -14,7 +14,10 @@ Key-learning points:
 2. canvas.getContext("2d")
     -the parameter defines the drawing context associated with the canvas.
     -2d represents 2d Image, webgl is 3d.
-    -it allows function like .clearRect, .fillStyle, .fillRect
+    -it allows function like .clearRect, .fillStyle, .fillRect, .fillText
+   
+3. Make sure the name of the function you defined is not a predefined HTML function. 
+For example, I tried to name a function "clear()", but the function wouldn't work because it is already predefined.
     
 */ 
 
