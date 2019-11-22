@@ -1,25 +1,16 @@
-//
+/*
+This script allows the user to upload an image and convert it into a grayscale image.
+The original image is shown on one canvas, and upon clicking 'Convert', the grayscale image will appear on another canvas next to the original.
+
+*/
 
 //HTML
 <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" ></script>
-
-
 <h1>Convert Image to Grayscale</h1>
-
-<canvas id="can">
-</canvas>
-
-<canvas id="can2">
-</canvas>
-
-<p>
-  <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" >
-</p>
-<p>
-  
- <p>
-   <input type="button"  id="mgray" value="Make Gray" onclick="makeGray()" >
-</p>
+<canvas id="can"></canvas>
+<canvas id="can2"></canvas>
+<p><input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" ></p>
+<p><input type="button"  id="mgray" value="Make Gray" onclick="makeGray()" ></p>
 
 
 //CSS
@@ -35,9 +26,6 @@ canvas {
 }
 
 //Javascript
-
-
-
 // Make image a global variable which can be accessed by both functions
 // If a variable is used by 2 or more functions, it should be declared as a global variable to make sure the function refers to the same variable. 
 
