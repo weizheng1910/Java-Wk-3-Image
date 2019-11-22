@@ -1,74 +1,36 @@
-// Merging foreground, drewRobert.png with background, dinos.png. Area to be replaced by the background is Green(R=0,B=0,G=255) in the foreground image.
+/*
+Code can be run here: https://www.dukelearntoprogram.com/course1/example/index.php
 
+There are 2 functions to be created for this exercise:
+
+1. Merging foreground, drewRobert.png with background, dinos.png. Area to be replaced by the background is Green(R=0,B=0,G=255) in the foreground image.
+2. Creating a background around an image.
+
+*/
 
 
 function bgGreen (x,y) {
 
+//FgImg is the foreground image we want, with the background coloured green.
+//BgImg has the background image we want
 var FgImg = new SimpleImage(x)
 var BgImg = new SimpleImage(y)
 
 
-
+//For each pixel of FgImg, if it is green then replace it with the background pixel with the exact coordinates.
  for (var pixel of FgImg.values()) {
-     
      var a = pixel.getX()
      var b = pixel.getY()
      var z = BgImg.getPixel(a,b)
-     
      if ((pixel.getGreen()==255)&&(pixel.getBlue()==0)&&(pixel.getRed()==0))
-     
      {FgImg.setPixel(a,b,z)
-     } 
-    
+     }   
 }
-
 print(FgImg)
 }
 
-
-
-
-//Question 2 Deubgging
-
-//Before
-
-var img = new SimpleImage(200,200);
-for (var px of img.values()){
-  var x = px.getX();
-  var y = px.getY();
-  if (x < img.getWidth()/2){
-    px.setRed(255);
-  }
-  if (y>img.getHeight()/2){
-    px.setBlue(255);
-  }
-  else {
-    px.setGreen(255);
-  }
-}
-print (img);
-
-//After
-
 bgGreen("drewRobert.png","dinos.png")
 
-
-var img = new SimpleImage(200,200);
-for (var px of img.values()){
-  var x = px.getX();
-  var y = px.getY();
-  if (x < img.getWidth()/2){
-    px.setRed(255);
-  }
-  if (y>img.getHeight()/2){
-    px.setBlue(255);
-  }
-  else if ((y<img.getHeight()/2)&&(x > img.getWidth()/2)){
-    px.setGreen(255);
-  }
-  
-}
-print (img);
 
 // Creating a Border around an image
 
