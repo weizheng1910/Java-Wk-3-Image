@@ -8,6 +8,8 @@ To see a specific example in action, take the below images from https://www.duke
 Foreground: drewRobert.png
 Background: dinos.png
 
+The script also allows the canvas to be cleared.
+
 Lesson Learnt:
 1. Declare variables as a global variable when they are used by multiple functions. 
 2. Higher order functions. In this case, the higher-order function clearCanvas(), used the base function doClear() to clear both the foreground and background image. 
