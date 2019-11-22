@@ -4,7 +4,7 @@ Code can be run here: https://www.dukelearntoprogram.com/course1/example/index.p
 There are 2 functions to be created for this exercise:
 
 1. Merging foreground, drewRobert.png with background, dinos.png. Area to be replaced by the background is Green(R=0,B=0,G=255) in the foreground image.
-2. Creating a background around an image.
+2. Creating a border around an image.
 
 */
 
